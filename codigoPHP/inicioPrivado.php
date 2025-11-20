@@ -1,6 +1,6 @@
 <?php
-    if(isset($_REQUEST['login'])){
-        header('Location: codigoPHP/login.php');
+    if(isset($_REQUEST['cerrarsesion'])){
+        header('Location: ../indexLoginLogoffTema5.php');
         exit;
     }
 ?>
@@ -17,21 +17,14 @@
             margin: 0;
             padding: 0;
         }
-        header{
+        header {
             background: green;
             color: white;
             padding: 15px;
-            & h1{
-                text-align: center;
-                padding-top: 35px;
-                margin: 0;
-            }
-            & h2{
-                display: inline-block; 
-                text-align: left;
-                padding: 15px;
-                border-top: 10px;
-            }
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
         }
         main {
             max-width: 800px;
@@ -40,6 +33,9 @@
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            & h3{
+                text-align: center;
+            }
         }
         ul {
             list-style: none;
@@ -77,12 +73,11 @@
         footer i{
             font-size: 2.1rem;
         }
-        .form-actions {
+	.form-actions {
             display: flex;
-            justify-content: right;
+            justify-content: center;
             gap: 20px;
-            margin-top: -150px;
-            margin-right: 30px;
+            margin-top: 100px;
         }
         .boton, input[type="submit"] {
             padding: 12px 25px;
@@ -95,24 +90,27 @@
             font-weight: bold;
             text-decoration: none; /* Para los enlaces <a> */
             display: inline-block;
-            text-align: center;
+            text-align: left;
             transition: background-color 0.3s;
-        }	
+        }
 
     </style>
 </head>
 <body>
     <header>
-        <h1>Inicio público</h1>
-        <h2><b>LOGIN LOGOFF TEMA 5</b></h2>
-        <div class="form-actions">
-            <form action="" method="post">
-                <input type="submit" id="login" name="login" value="LOGIN">
-            </form> 
-        </div>
-            
+        <h1><b>Inicio privado</b></h1>
+        <form>
+            <input type="submit" name="cerrarsesion" value='Cerrar Sesión' id="cerrarsesion">
+        </form>
     </header>
-        
+    <main>
+    <h3>Bienvenido a la Zona Privada</h3>
+    <div class="form-actions">
+        <form>
+            <input type="submit" name="detalle" value='Detalle' id="detalle">
+        </form>
+    </div>
+    </main>
     <footer>
         <caption>
             <h4>2025-26 IES LOS SAUCES. © Todos los derechos reservados.</h4>
@@ -122,3 +120,4 @@
     </footer>
 </body>
 </html>
+
