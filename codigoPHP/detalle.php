@@ -3,8 +3,8 @@
         header('Location: ../indexLoginLogoffTema5.php');
         exit;
     }
-    if(isset($_REQUEST['detalle'])){
-        header('Location: detalle.php');
+    if(isset($_REQUEST['volver'])){
+        header('Location: inicioPrivado.php');
         exit;
     }
 ?>
@@ -102,16 +102,16 @@
 </head>
 <body>
     <header>
-        <h1><b>Inicio privado</b></h1>
+        <h1><b>Página de detalle</b></h1>
         <form>
             <input type="submit" name="cerrarsesion" value='Cerrar Sesión' id="cerrarsesion">
         </form>
     </header>
     <main>
-    <h3>Bienvenido a la Zona Privada</h3>
+    <h3>Aquí se muestran los detalles</h3>
     <div class="form-actions">
         <form>
-            <input type="submit" name="detalle" value='Detalle' id="detalle">
+            <input type="submit" name="volver" value='Volver' id="volver">
         </form>
     </div>
     </main>
@@ -124,4 +124,3 @@
     </footer>
 </body>
 </html>
-
