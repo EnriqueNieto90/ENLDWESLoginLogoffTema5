@@ -3,6 +3,15 @@
         header('Location: codigoPHP/login.php');
         exit;
     }
+    if(!isset($_COOKIE['idioma'])){
+        setcookie("idioma", 'es', time()+60);
+        header('Location: ../indexLoginLogoffTema5.php');
+        exit;
+    }
+    if(isset($_REQUEST['idiomaSeleccionado'])){
+        setcookie("idioma", $_REQUEST['idiomaSeleccionado'], time()+60);
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -97,7 +106,10 @@
             display: inline-block;
             text-align: center;
             transition: background-color 0.3s;
-        }	
+        }
+        #ingles, #español{
+            display: none;
+        }
 
     </style>
 </head>
@@ -108,6 +120,8 @@
         <div class="form-actions">
             <form action="" method="post">
                 <input type="submit" id="login" name="login" value="LOGIN">
+                <input type="submit" id="ingles" name='idiomaSeleccionado' value='UK'><a href="?lang=EN"><img id="UK" src="webroot/images/reino.png" alt="Ingles">
+                <input type="submit" id="español" name='idiomaSeleccionado' value="ES"><img id="ES" src="webroot/images/esp.png" alt="Español">
             </form> 
         </div>
             
