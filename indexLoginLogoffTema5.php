@@ -4,12 +4,12 @@
         exit;
     }
     if(!isset($_COOKIE['idioma'])){
-        setcookie("idioma", 'es', time()+60);
-        header('Location: ../indexLoginLogoffTema5.php');
-        exit;
+        setcookie("idioma", 'es', time()+600);
     }
     if(isset($_REQUEST['idiomaSeleccionado'])){
-        setcookie("idioma", $_REQUEST['idiomaSeleccionado'], time()+60);
+        setcookie("idioma", $_REQUEST['idiomaSeleccionado'], time()+600);
+        header('Location: ./indexLoginLogoffTema5.php');
+        exit;
     }
     
 ?>
@@ -126,12 +126,14 @@
         </div>
             
     </header>
+    <main>
         
+    </main>
     <footer>
         <caption>
             <h4>2025-26 IES LOS SAUCES. © Todos los derechos reservados.</h4>
-        <p><a href="https://enriquenielor.ieslossauces.es/">Enrique Nieto Lorenzo</a> Fecha de Actualización : 20-11-2025</p>
-        <a href="https://github.com/EnriqueNieto90/ENLDWESLoginLogoffTema5.git" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <p><a href="https://enriquenielor.ieslossauces.es/">Enrique Nieto Lorenzo</a> Fecha de Actualización : 20-11-2025</p>
+            <a href="https://github.com/EnriqueNieto90/ENLDWESLoginLogoffTema5.git" target="_blank"><i class="fa-brands fa-github"></i></a>
         </caption>
     </footer>
 </body>
