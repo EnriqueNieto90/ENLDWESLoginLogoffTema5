@@ -31,7 +31,15 @@
             margin: 0;
         }
         main {
-            max-width: 800px;
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+/*        main {
+            max-width: 80%;
             margin: 30px auto;
             padding: 20px;
             background: white;
@@ -40,7 +48,7 @@
             & h3{
                 text-align: center;
             }
-        }
+        }*/
         ul {
             list-style: none;
             padding: 0;
@@ -69,7 +77,7 @@
             text-align: center;
             height: 150px;
 	    color: white;
-            position: fixed;
+            position: relative;
             bottom: 0;
             left: 0;
             width: 100%;

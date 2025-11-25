@@ -120,7 +120,7 @@
         <div class="form-actions">
             <form action="" method="post">
                 <input type="submit" id="login" name="login" value="LOGIN">
-                <input type="submit" id="ingles" name='idiomaSeleccionado' value='UK'><a href="?lang=EN"><img id="UK" src="webroot/images/reino.png" alt="Ingles">
+                <input type="submit" id="ingles" name='idiomaSeleccionado' value='UK'><img id="UK" src="webroot/images/uk.png" alt="Ingles">
                 <input type="submit" id="español" name='idiomaSeleccionado' value="ES"><img id="ES" src="webroot/images/esp.png" alt="Español">
             </form> 
         </div>
