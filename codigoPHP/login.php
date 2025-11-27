@@ -111,11 +111,11 @@
     </div>
     
     <footer>
-        <caption>
+        <div>
             <h4>2025-26 IES LOS SAUCES. © Todos los derechos reservados.</h4>
         <p><a href="https://enriquenielor.ieslossauces.es/">Enrique Nieto Lorenzo</a> Fecha de Actualización : 20-11-2025</p>
         <a href="https://github.com/EnriqueNieto90/ENLDWESLoginLogoffTema5.git" target="_blank"><i class="fa-brands fa-github"></i></a>
-        </caption>
+        </div>
     </footer>
 </body>
 </html>
