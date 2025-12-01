@@ -3,6 +3,22 @@
         header('Location: ../indexLoginLogoffTema5.php');
         exit;
     }
+    
+    session_start();
+    // importamos el archivo con los datos de conexión
+    require_once '../conf/confDBPDO.php';
+    require_once "../core/231018libreriaValidacion.php"; // importamos nuestra libreria
+    
+    $entradaOK = true; //Variable que nos indica que todo va bien
+    $aErrores = [  //Array donde recogemos los mensajes de error
+        'nombre' => '', 
+        'contrasena'=>''
+    ];
+    $aRespuestas=[ //Array donde recogeremos la respuestas correctas (si $entradaOK)
+        'nombre' => '',  
+        'contrasena'=>''
+    ]; 
+    
     if(isset($_REQUEST['entrar'])){
         header('Location: inicioPrivado.php');
         exit;
