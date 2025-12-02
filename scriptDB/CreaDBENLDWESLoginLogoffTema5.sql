@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS T02_Departamento(
     T02_FechaBajaDepartamento DATETIME NULL
 );
 
-CREATE TABLE IF NOT EXISTS T01_Usuarios (
+CREATE TABLE IF NOT EXISTS T01_Usuario (
     T01_CodUsuario VARCHAR(10) NOT NULL,
         CHECK (LENGTH(T01_CodUsuario) >= 4),
         PRIMARY KEY (T01_CodUsuario),

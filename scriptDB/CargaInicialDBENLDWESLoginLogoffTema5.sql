@@ -13,7 +13,7 @@ INSERT INTO T02_Departamento (T02_CodDepartamento,T02_DescDepartamento,T02_Fecha
         ('ING','Departamento de Inglés.',now(),289.6,now()
 );
 
-INSERT INTO T01_Usuarios (T01_CodUsuario,T01_Password,T01_DescUsuario) values
+INSERT INTO T01_Usuario (T01_CodUsuario,T01_Password,T01_DescUsuario) values
         ('gonzalo',SHA2('gonzalopaso',256),'Gonzalo Junquera Lorenzo'),
         ('enrique',SHA2('enriquepaso',256),'Enrique Nieto Lorenzo'),
         ('alvaroG',SHA2('alvarogpaso',256),'Alvaro Gonzalez'),
