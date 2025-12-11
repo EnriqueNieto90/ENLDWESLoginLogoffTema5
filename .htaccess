@@ -1,1 +1,5 @@
+DirectoryIndex indexLoginLogoffTema5.php
 
+ErrorDocument 404 /ENLDWESProyectoDWES/error/404.html
+ErrorDocument 403 /ENLDWESProyectoDWES/error/403.html
+ErrorDocument 500 /ENLDWESProyectoDWES/error/500.html
