@@ -1,7 +1,7 @@
 <?php
     /**
     * @author: Enrique Nieto Lorenzo
-    * @since: 02/12/2025
+    * @since: 14/12/2025
     * Proyecto Login logoff Tema 5.
     */
 
