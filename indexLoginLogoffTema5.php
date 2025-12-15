@@ -41,11 +41,6 @@
     }
 ?>
 <!DOCTYPE html>
-<!--
-    Autor: Enrique Nieto Lorenzo
-    Fecha modificación: 20/11/2025
-    Descripción: Aplicación Login Logoff Tema 5
--->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
