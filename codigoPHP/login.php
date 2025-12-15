@@ -108,11 +108,6 @@
         //Mostrar mensajes de error (si los hay y el formulario no se muestra por primera vez)
 ?>
 <!DOCTYPE html>
-<!--
-    Autor: Enrique Nieto Lorenzo
-    Fecha modificación: 20/11/2025
-    Descripción: Aplicación Login Logoff Tema 5
--->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -158,12 +153,6 @@
         form * {
             margin-top: 10px;
         }
-        .error {
-            font-size: 0.85rem;
-            color: red;
-            margin-left: 10px;
-            display: block;
-        }
         input[type="text"], 
         input[type="password"] {
             padding: 15px 20px;
@@ -174,7 +163,7 @@
             border: 2px solid #ddd;
             width: 100%;
             box-sizing: border-box;
-            background-color: #f9f9f9;
+            background-color: #fff9c4;
             transition: border-color 0.3s;
         }
         input[type="text"]:focus,
@@ -251,15 +240,9 @@
     <main>
         <h2>INICIO SESIÓN</h2>
         <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"> 
-            <input type="text" id="usuario" name="usuario" value="<?php echo $_REQUEST['usuario']??'' ?>" placeholder="Usuario" required>
-            <?php if(isset($_REQUEST['entrar']) && !empty($aErrores['usuario'])): ?>
-                <span class="error"><?php echo $aErrores['usuario']; ?></span>
-            <?php endif; ?>
+            <input type="text" id="usuario" name="usuario" value="<?php echo $_REQUEST['usuario']??'' ?>" placeholder="Usuario">
             <br>
-            <input type="password" id="contrasena" name="contrasena" value="<?php echo $_REQUEST['contrasena']??'' ?>" placeholder="Contraseña" required>
-            <?php if(isset($_REQUEST['entrar']) && !empty($aErrores['contrasena'])): ?>
-                <span class="error"><?php echo $aErrores['contrasena']; ?></span>
-            <?php endif; ?>
+            <input type="password" id="contrasena" name="contrasena" value="<?php echo $_REQUEST['contrasena']??'' ?>" placeholder="Contraseña">
             <br>   
             <div class="form-actions">
                 <button name="entrar" id="entrar"><span>Entrar</span></button>
