@@ -87,7 +87,7 @@
             <p>Enrique Nieto Lorenzo | Actualizado: 07-01-2026</p>
             <div class="footer-links">
                 <a href="https://github.com/EnriqueNieto90/ENLDWESLoginLogoffTema5" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="../index.html"><i class="fa-solid fa-house"></i></a>
+                <a href="../../index.html"><i class="fa-solid fa-house"></i></a>
             </div>
         </div>
     </footer>
