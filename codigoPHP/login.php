@@ -42,7 +42,7 @@ if ($entradaOK) {
         if ($usuarioBD) {
             $oFechaActual = new DateTime();
             session_start();
-            $_SESSION['usuarioENLLoginLogoffTema5'] = [
+            $_SESSION['userENLLoginLogoffTema5'] = [
                 'CodUsuario' => $usuarioBD->T01_CodUsuario,
                 'Password' => $usuarioBD->T01_Password,
                 'DescUsuario' => $usuarioBD->T01_DescUsuario,
@@ -85,7 +85,7 @@ if ($entradaOK) {
                 <span class="subtitulo-tema">LOGIN LOGOFF</span>
             </div>
             <div class="nav-derecha">
-                <form action="indexLoginLogoff.php" method="post">
+                <form action="" method="post">
                     <button type="submit" name="cancelar" class="btn-header">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i> Salir
                     </button>
@@ -102,7 +102,7 @@ if ($entradaOK) {
                 <h2 class="titulo-login">Iniciar sesión</h2>
                 <p class="subtitulo-login">Utilice su cuenta corporativa para acceder.</p>
 
-                <form action="indexLoginLogoff.php" method="post"> 
+                <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"> 
 
                     <div class="grupo-input">
                         <input type="text" class="input-microsoft" name="usuario" value="<?php echo $_REQUEST['usuario'] ?? '' ?>" placeholder="Usuario">

@@ -8,8 +8,8 @@
     session_start();
     
     // Comprobar sesión activa
-    if (isset($_SESSION["usuarioDAW205AppLoginLogoffTema5"])) {
-        $textoBotonIniciarSesion = 'Hola '.$_SESSION["usuarioENLLoginLogoffTema5"]['CodUsuario'];
+    if (isset($_SESSION["userENLLoginLogoffTema5"])) {
+        $textoBotonIniciarSesion = 'Hola '.$_SESSION["userENLLoginLogoffTema5"]['CodUsuario'];
 
         if (isset($_REQUEST['iniciarSesion'])) {
             header('Location: codigoPHP/inicioPrivado.php');
@@ -58,7 +58,7 @@
         </div>
 
         <div class="header-controls">
-            <form action="indexLoginLogoffTema5.php" method="post" class="idioma-buttons">
+            <form action="" method="post" class="idioma-buttons">
                 <?php $lang = $_COOKIE['idioma'] ?? 'ES'; ?>
 
                 <button type="submit" name="idioma" value="ES" class="btn-flag <?php echo ($lang == 'ES') ? 'active' : ''; ?>" title="Español">
@@ -72,7 +72,7 @@
                 </button>
             </form>
 
-            <form action="indexLoginLogoff.php" method="post" class="form-no-margin">
+            <form action="" method="post" class="form-no-margin">
                 <button name="iniciarSesion" class="btn-login-header">
                     Iniciar Sesión
                 </button>

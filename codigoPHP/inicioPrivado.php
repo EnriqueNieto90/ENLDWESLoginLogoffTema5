@@ -7,7 +7,7 @@
 
 session_start();
 
-if (!isset($_SESSION["usuarioENLLoginLogoffTema5"])) {
+if (!isset($_SESSION["userENLLoginLogoffTema5"])) {
     header("location: login.php");
     exit;
 }
@@ -38,7 +38,7 @@ if (isset($_REQUEST['detalle'])) {
                 <span class="subtitulo-tema">LOGIN LOGOFF</span>
             </div>
             <div class="nav-derecha">
-                <form action="indexLoginLogoffTema5.php" method="post">
+                <form action="" method="post">
                     <button name="cerrarSesion" class="btn-header">Cerrar sesión</button>
                 </form>
             </div>
@@ -49,26 +49,23 @@ if (isset($_REQUEST['detalle'])) {
 
                 <div class="welcome-msg">
                     <?php
-                    $aUsuarioEnCurso = $_SESSION['usuarioENLLoginLogoffTema5'];
+                    $aUsuarioEnCurso = $_SESSION['userENLLoginLogoffTema5'];
 
-                    $fechaUltimaConexionAnterior = new DateTime($aUsuarioEnCurso->getFechaHoraUltimaConexionAnterior());
-                    $idioma = $_COOKIE["idioma"] ?? "ES";
+                    $fechaUltimaConexionAnterior = new DateTime($aUsuarioEnCurso['FechaHoraUltimaConexionAnterior']);
+                    $idioma = isset($_COOKIE["idioma"]) ? $_COOKIE["idioma"] : "ES";
 
                     if ($idioma == "ES") {
                         setlocale(LC_TIME, 'es_ES.utf8');
-                        echo '<h2>Bienvenido <strong>' . $aUsuarioEnCurso->getDescUsuario() . '</strong></h2>';
-                        echo '<p>Esta es la <strong>' . $aUsuarioEnCurso->getNumConexiones() . 'ª</strong> vez que se conecta.</p>';
+                        echo '<h2>Bienvenido <strong>'.$aUsuarioEnCurso['DescUsuario'].'</strong></h2>';
+                        echo '<p style="margin-top:10px;">Esta es la <strong>'.$aUsuarioEnCurso['NumConexiones'].'ª</strong> vez que se conecta.</p>';
                     } elseif ($idioma == "EN") {
-                        echo '<h2>Welcome <strong>' . $aUsuarioEnCurso->getDescUsuario() . '</strong></h2>';
-                        echo '<p>This is the <strong>' . $aUsuarioEnCurso->getNumConexiones() . '</strong> time you have connected.</p>';
-                    } else {
-                        echo '<h2>Bienvenue <strong>' . $aUsuarioEnCurso->getDescUsuario() . '</strong></h2>';
-                        echo '<p>C\'est la <strong>' . $aUsuarioEnCurso->getNumConexiones() . 'e</strong> fois que vous vous connectez.</p>';
+                        // ... lógica idiomas ...
+                        echo '<h2>Welcome <strong>'.$aUsuarioEnCurso['DescUsuario'].'</strong></h2>';
                     }
                     ?>
                 </div>
 
-                <?php if (($aUsuarioEnCurso->getNumConexiones()) > 1) { ?>
+                <?php if (($aUsuarioEnCurso['NumConexiones']) > 1) { ?>
                     <div class="info-conexion">
                         <i class="fa-regular fa-clock"></i> Última conexión: 
                         <strong><?php echo $fechaUltimaConexionAnterior->format('d/m/Y H:i:s'); ?></strong>
@@ -76,7 +73,7 @@ if (isset($_REQUEST['detalle'])) {
                 <?php } ?>
 
                 <div class="contenedor-boton-centro">
-                    <form action="indexLoginLogoffTema5.php" method="post">
+                    <form action="" method="post">
                         <button name="detalle" class="btn-primary btn-detalle">
                             Ver Detalle <i class="fa-solid fa-arrow-right"></i>
                         </button>

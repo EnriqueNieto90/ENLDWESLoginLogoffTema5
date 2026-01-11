@@ -7,7 +7,7 @@
 
 session_start();
 
-if (!isset($_SESSION["usuarioENLLoginLogoffTema5"])) {
+if (!isset($_SESSION["userENLLoginLogoffTema5"])) {
     header("location: login.php");
     exit;
 }
@@ -37,7 +37,7 @@ if (isset($_REQUEST['volver'])) {
                 <span class="subtitulo-tema">LOGIN LOGOFF</span>
             </div>
             <div class="nav-derecha">
-                <form action="indexLoginLogoffTema5.php" method="post">
+                <form action="" method="post">
                     <button name="cerrarSesion" class="btn-header">Cerrar sesión</button>
                 </form>
             </div>
@@ -45,7 +45,7 @@ if (isset($_REQUEST['volver'])) {
 
         <main>
             <div class="contenedor-volver">
-                <form action="indexLoginLogoffTema5.php" method="post">
+                <form action="" method="post">
                     <button name="volver" class="btn-link btn-volver-color">
                         <i class="fa-solid fa-arrow-left"></i> Volver a Inicio
                     </button>
