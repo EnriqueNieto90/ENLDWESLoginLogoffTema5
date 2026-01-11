@@ -1,12 +1,13 @@
 :root {
-    --ms-blue: #0078D4;          
+    --ms-blue: #0078D4;           
     --ms-blue-hover: #0067b8;     
-    --bg-body: #f0f2f5;         
-    --card-bg: #ffffff;          
+    --bg-body: #f0f2f5;           
+    --card-bg: #ffffff;           
     --text-color: #323130;        
     --input-bg-yellow: #fff9c4;   
     --border-color: #8a8886;
     --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    --error-color: #e00;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,7 +15,6 @@
 body {
     font-family: var(--font-family);
     background-color: var(--bg-body);
-    
     background-image: radial-gradient(circle at 50% 50%, #ffffff 0%, #f0f2f5 100%);
     color: var(--text-color);
     min-height: 100vh;
@@ -23,7 +23,7 @@ body {
 }
 
 /* =========================================
-    HEADER
+   HEADER
    ========================================= */
 .header-app {
     background-color: white;
@@ -83,7 +83,7 @@ body {
 }
 
 /* =========================================
-    MAIN
+   MAIN Y TARJETAS
    ========================================= */
 main {
     flex: 1;
@@ -103,6 +103,8 @@ main {
     text-align: left;
 }
 
+.text-center { text-align: center; }
+
 .logo-app-img {
     height: 40px;
     margin-bottom: 1rem;
@@ -113,6 +115,11 @@ main {
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: #1b1b1b;
+}
+
+.subtitulo-login {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
 }
 
 /* =========================================
@@ -143,6 +150,16 @@ main {
     opacity: 0.7;
 }
 
+.error-msg {
+    color: var(--error-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
 .acciones-login {
     display: flex;
     justify-content: space-between;
@@ -150,15 +167,29 @@ main {
     margin-top: 30px;
 }
 
-.btn-link {
+
+span.btn-link {
+    color: #666; 
+    cursor: default;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+
+button.btn-link {
     background: none;
     border: none;
-    color: var(--ms-blue);
+    color: var(--ms-blue-hover); 
+    font-weight: 700; 
     cursor: pointer;
     font-size: 0.9rem;
     padding: 0;
 }
-.btn-link:hover { text-decoration: underline; }
+
+button.btn-link:hover {
+    text-decoration: underline;
+    color: #004d8a;
+}
 
 .btn-primary {
     background-color: var(--ms-blue);
@@ -172,12 +203,24 @@ main {
 }
 .btn-primary:hover { background-color: var(--ms-blue-hover); }
 
+/* Clase específica para botón detalle (ancho auto) */
+.btn-detalle {
+    width: auto;
+    padding: 10px 40px;
+}
+
 /* =========================================
-    VISTAS PRIVADAS
+   VISTAS PRIVADAS
    ========================================= */
 .card-dashboard {
     max-width: 900px;
     border-top: 4px solid var(--ms-blue);
+}
+
+.card-wide {
+    max-width: 95vw;
+    width: 100%;
+    padding: 30px;
 }
 
 .welcome-msg {
@@ -185,6 +228,7 @@ main {
     font-size: 1.1rem;
 }
 .welcome-msg strong { color: var(--ms-blue); }
+.welcome-msg p { margin-top: 10px; }
 
 .info-conexion {
     background-color: #f0f6ff;
@@ -193,6 +237,19 @@ main {
     margin-bottom: 20px;
     border-left: 3px solid var(--ms-blue);
 }
+
+.contenedor-boton-centro {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Botón Volver */
+.contenedor-volver {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px;
+}
+.btn-volver-color { color: #666; }
 
 /* Tablas Detalle */
 .tabla-microsoft {
@@ -214,8 +271,25 @@ main {
     word-break: break-all;
 }
 
+.titulo-tabla {
+    color: var(--ms-blue);
+    margin: 30px 0 15px;
+}
+
+.scroll-container {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #eee;
+}
+
+.phpinfo-container {
+    overflow-x: auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
 /* =========================================
-    FOOTER
+   FOOTER
    ========================================= */
 .footer-microsoft {
     background-color: #f3f2f1;
@@ -249,9 +323,8 @@ main {
 .copy-text { font-weight: 500; }
 
 /* =========================================
-    INDEX PÚBLICO
+   INDEX PÚBLICO
    ========================================= */
-
 .header-controls {
     display: flex;
     align-items: center;
@@ -263,6 +336,8 @@ main {
     gap: 8px;
     margin: 0;
 }
+
+.form-no-margin { margin: 0; }
 
 .btn-flag {
     background-color: transparent;
@@ -276,9 +351,7 @@ main {
     justify-content: center;
 }
 
-.btn-flag:hover {
-    background-color: #f3f2f1;
-}
+.btn-flag:hover { background-color: #f3f2f1; }
 
 .btn-flag.active {
     background-color: #e1dfdd;
@@ -302,7 +375,12 @@ main {
     max-height: 500px; 
     box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
     border-radius: 8px;
+    display: inline-block;
 }
+
+/* Ocultar imagen rota */
+.home-image-container img[src=""], 
+.home-image-container img:not([src]){ opacity:0; }
 
 .btn-login-header {
     background-color: var(--ms-blue);

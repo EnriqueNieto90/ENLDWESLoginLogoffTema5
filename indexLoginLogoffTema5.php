@@ -1,15 +1,15 @@
 <?php
-    /**
-    * @author: Enrique Nieto Lorenzo
-    * @since: 14/12/2025
-    * Proyecto Login logoff Tema 5.
-    */
+/**
+ * @author: Enrique Nieto Lorenzo
+ * @since: 15/12/2025
+ * @description: Vista de Inicio Público.
+ */
 
     session_start();
     
     // Comprobar sesión activa
     if (isset($_SESSION["usuarioDAW205AppLoginLogoffTema5"])) {
-        $textoBotonIniciarSesion = 'Hola '.$_SESSION["usuarioDAW205AppLoginLogoffTema5"]['CodUsuario'];
+        $textoBotonIniciarSesion = 'Hola '.$_SESSION["usuarioENLLoginLogoffTema5"]['CodUsuario'];
 
         if (isset($_REQUEST['iniciarSesion'])) {
             header('Location: codigoPHP/inicioPrivado.php');
@@ -46,50 +46,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio Público | Enrique Nieto</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="webroot/css/estilosLogin.css">
+    <link rel="stylesheet" href="webroot/css/all.min.css">
+    <link rel="stylesheet" href="webroot/css/estilosLogin.css?v=2">
 </head>
 <body>
 
     <header class="header-app">
         <div class="logo-seccion">
-            <span class="titulo-tema">INICIO PÚBLICO</span>
-            <span class="subtitulo-tema">LOGIN LOGOFF TEMA 5</span>
+            <span class="titulo-tema">Bienvenido</span>
+            <span class="subtitulo-tema">LOGIN LOGOFF</span>
         </div>
 
         <div class="header-controls">
-            
-            <form action="" method="post" class="idioma-buttons">
-                <button type="submit" name="idioma" value="ES" class="btn-flag <?php echo ($idiomaActivo == 'ES') ? 'active' : ''; ?>" title="Español">
-                    <img src="webroot/images/esp.png" alt="Español">
+            <form action="indexLoginLogoffTema5.php" method="post" class="idioma-buttons">
+                <?php $lang = $_COOKIE['idioma'] ?? 'ES'; ?>
+
+                <button type="submit" name="idioma" value="ES" class="btn-flag <?php echo ($lang == 'ES') ? 'active' : ''; ?>" title="Español">
+                    <img src="webroot/images/esp.png" alt="ES">
                 </button>
-                <button type="submit" name="idioma" value="EN" class="btn-flag <?php echo ($idiomaActivo == 'EN') ? 'active' : ''; ?>" title="English">
-                    <img src="webroot/images/uk.png" alt="English">
+                <button type="submit" name="idioma" value="EN" class="btn-flag <?php echo ($lang == 'EN') ? 'active' : ''; ?>" title="English">
+                    <img src="webroot/images/uk.png" alt="EN">
                 </button>
-                <button type="submit" name="idioma" value="FR" class="btn-flag <?php echo ($idiomaActivo == 'FR') ? 'active' : ''; ?>" title="Français">
-                    <img src="webroot/images/francia.png" alt="Français">
+                <button type="submit" name="idioma" value="FR" class="btn-flag <?php echo ($lang == 'FR') ? 'active' : ''; ?>" title="Français">
+                    <img src="webroot/images/francia.png" alt="FR">
                 </button>
             </form>
 
-            <form action="" method="post" style="margin:0;">
+            <form action="indexLoginLogoff.php" method="post" class="form-no-margin">
                 <button name="iniciarSesion" class="btn-login-header">
                     Iniciar Sesión
                 </button>
             </form>
-
         </div>
     </header>
-    
-    <main>
-        <div class="card-central card-dashboard" style="text-align: center;">
-            
-            <h2 class="titulo-login" style="text-align: center;">Bienvenido a la aplicación Login Logoff</h2>
-            <p>Sistema de gestión de usuarios con autenticación y control de sesiones.</p>
-            
-            <div class="home-image-container">
-                <img src="webroot/images/arbol.png" alt="Diagrama de navegación de la aplicación">
-            </div>
 
+    <main>
+        <div class="card-central card-dashboard text-center">
+            <h2 class="titulo-login text-center">Bienvenido a la aplicación Login Logoff</h2>
+            <p>Sistema de gestión de usuarios con autenticación y control de sesiones.</p>
+
+            <div class="home-image-container">
+                <img src="webroot/images/arbol.png" alt="Diagrama de navegación" onerror="this.style.display='none'">
+            </div>
         </div>
     </main>
     
