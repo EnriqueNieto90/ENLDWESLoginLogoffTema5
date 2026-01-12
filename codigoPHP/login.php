@@ -9,7 +9,7 @@ if (isset($_REQUEST['cancelar'])) {
     exit;
 }
 
-require_once '../config/EDconfDBPDO.php';
+require_once '../config/confDBPDO.php';
 require_once "../core/231018libreriaValidacion.php";
 
 $entradaOK = true;
